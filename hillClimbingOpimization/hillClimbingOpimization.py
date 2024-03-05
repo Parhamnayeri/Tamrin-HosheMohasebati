@@ -16,8 +16,12 @@ def grid(tekrar,step,x,y):
     b= random.uniform(-y,y)
     bestSolution = ackleyFunction(a,b)
     for i in range(x*2):
+        if i == 0:
+            i +=1
         for j in range(y*2):
-            hillX,hillY,hillSol = HillClimbing(tekrar,step,x,y)
+            if j == 0 :
+                j+=1
+            hillX,hillY,hillSol = HillClimbing(tekrar,step,i,j)
             if bestSolution > hillSol:
                 bestSolution = hillSol
                 a = hillX
